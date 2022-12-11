@@ -1,4 +1,12 @@
-<?php session_start(); session_destroy(); ?>
+<?php
+ session_start();
+ session_destroy(); 
+ session_start();
+
+ if(!isset($_SESSION['cart_count']))
+ $_SESSION['cart_count'] = 0;
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +29,18 @@
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">0</span>
                 </a>
-            </div>            
+            </div> 
+            <div class="col-12">
+                <hr>
+            </div>         
         </div>
-        <hr>
-        <h3>Online Shopping is Successful!</h3>
-        <a href="/shopping-cart/" class="btn btn-danger btn-lg"><i class="fa fa-shopping-bag"></i> Continue</a>
+        <div class="row">
+            <div class="col-12">
+            <h3>Online Shopping is Successful!</h3>
+             <a href="index.php" class="btn btn-danger btn-lg"><i class="fa fa-shopping-bag"></i> Continue Shopping</a>
+            </div>
+        </div>
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

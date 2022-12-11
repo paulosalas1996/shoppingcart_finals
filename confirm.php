@@ -20,8 +20,7 @@
             <div class="col-2 text-right">
                 <a href="cart.php" class="btn btn-primary">
                     <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">
-                        <?php echo (isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : "0"); ?>
+                    <span class="badge badge-light"><?php echo $_SESSION['cart_count']; ?>
                     </span>
                 </a>
             </div>            
