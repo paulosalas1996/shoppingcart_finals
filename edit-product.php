@@ -30,8 +30,8 @@
 
     if(isset($_POST['btnUpdate'])){
         $name=htmlspecialchars($_POST['txtname']);
-        $price-htmlspecialchars($_POST['txtprice']);
-        $description-htmlspecialchars($_POST['txtdescription']);
+        $price=htmlspecialchars($_POST['txtprice']);
+        $description=htmlspecialchars($_POST['txtdescription']);
         $photo1=htmlspecialchars($_POST['filephoto1']);
         $photo2=htmlspecialchars($_POST['filephoto2']);
 
@@ -51,7 +51,7 @@
                    WHERE id = " .$_SESSION['k'];
             
 		if(mysqli_query($con, $strSql))
-        header('location:product.php');
+        header('location:edit-product-success.php');
     
         else
         echo 'ERROR: Failed to Update Record!';
@@ -64,29 +64,6 @@
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>

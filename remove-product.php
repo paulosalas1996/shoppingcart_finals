@@ -37,7 +37,7 @@
 						WHERE id = ".$_SESSION['k'];
 
 		if(mysqli_query($con, $strSql))
-			header('location:product.php');
+			header('location:delete-product-success.php');
 		
 		else
 			echo 'ERROR: Failed to Remove Record!';

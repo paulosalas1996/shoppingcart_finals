@@ -11,7 +11,7 @@
 .card-container.card {
     max-width: 350px;
     padding: 40px 40px;
-    background: #252525c4;
+    background: #0c84e6c4;
 }
 
 .btn {
@@ -27,7 +27,7 @@
  * Card component
  */
 .card {
-    background-color: #9a9c9e;
+    background-color: #44a1ff;
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
