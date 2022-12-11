@@ -103,7 +103,7 @@
                                 </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-10  align-items-right">
+                            <div class="col-sm-10  align-items-left">
                                 <button type="submit" name="btnAdd" class="btn btn-primary "><i class="fa fa-plus"></i> Add New Record</button>
                             </div>
                         </div>

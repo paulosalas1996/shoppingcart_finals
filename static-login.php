@@ -18,7 +18,7 @@
         if($rsUser = mysqli_query($con, $strSql)){
             if(mysqli_num_rows($rsUser) > 0){
                 echo "Valid Username/Password!";
-                header('location:product.php');
+                header('location:dashboard.php');
                 mysqli_free_result($rsUser);
             }
             else{
