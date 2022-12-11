@@ -1,18 +1,20 @@
+<?php require_once("functions.php");?>
 <?php
     session_start();
-
+              
+    $con = openConnection();
     if(isset($_POST['btnSignInUser'])){
+       
+ 
         $username = htmlspecialchars($_POST['txtusername']);
         $password = htmlspecialchars($_POST['txtpassword']);
-        
-
-        require_once('open-connection.php');
+  
         $strSql= "
                     SELECT * FROM tbl_user 
                     WHERE   username = '$username'
                     AND password = '$password'
                 ";
-
+         
         if($rsUser = mysqli_query($con, $strSql)){
             if(mysqli_num_rows($rsUser) > 0){
                 echo "Valid Username/Password!";
@@ -26,7 +28,7 @@
         else{
             echo 'ERROR: Could not execute your request.';
         }
-         require_once('close-connection.php');
+        closeConnection($con);
     }
 
 ?>
