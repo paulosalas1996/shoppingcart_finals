@@ -5,7 +5,7 @@ DEFINE ("DB_PASSWORD","");
 DEFINE ("DB_NAME","shopping_cart_db");
 
 function openConnection(){
-    $con =mysaqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    $con =mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
     if ($con===false)
         die("ERROR: Could Not connect ".mysqli_connect_error());
@@ -17,9 +17,10 @@ function closeConnection($con){
 }
 
 function getRecord($con,$strSql){
-    $arrRec=[]
-    $i=0;
-    if($re=mysqli_query($con,$strSql)){
+    $arrRec=[];
+    $i = 0;
+
+    if($rs=mysqli_query($con,$strSql)){
         if(mysqli_num_rows($rs)==1){
             $rec=mysqli_fetch_array($rs);
              foreach($rec as $key => $value){
@@ -27,9 +28,9 @@ function getRecord($con,$strSql){
              }
 
         }
-        elseif(mysqli_num_rows($rs>1)){
-            while($rec-mysqli_fetch_array($rs)){
-                foreach($rec as $key => $value){
+        elseif(mysqli_num_rows($rs) >1){
+            while($rec=mysqli_fetch_array($rs)){
+                foreach ($rec as $key => $value){
                     $arrRec[$i][$key]=$value;
                  }
                  $i++;
